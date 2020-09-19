@@ -1,7 +1,10 @@
 import math as math
+import sys
+
 import numpy as np
 import random
 import os
+from PyQt5 import QtWidgets, uic
 
 
 def func1():
@@ -133,6 +136,7 @@ class Step:
 
 
 if __name__ == '__main__':
-    # func1()
-    # func2()
-    task3()
+    func1()
+    #func2()
+    #task3()
+
