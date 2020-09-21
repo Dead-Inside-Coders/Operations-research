@@ -3,9 +3,6 @@ import sys
 
 import numpy as np
 import random
-import os
-from PyQt5 import QtWidgets, uic
-
 
 def func1():
     print("Laba 1")
@@ -15,6 +12,7 @@ def func1():
           ((math.pow(2, 5) * (12.3 + 52.7 * (31 / math.pow(73, 2.5)))) * (12.3 - 52.7 * (31 / math.pow(73, 2.5)))) /
           (math.pow(123 + 527 * (31 / math.pow(73, 2)), (1 / 3)) + 233)
           )
+
     print("Ticket")
     string = input("Enter a number with four digits: \n")
     num = int(string)
@@ -75,7 +73,7 @@ def readFile(fileName):
 
 
 def task3():
-    twoDimensionalArray = readFile('input1.txt')
+    twoDimensionalArray = readFile('../input1.txt')
     sum = twoDimensionalArray[0][0]
     step = Step(0, 0)
     move = Move
@@ -137,6 +135,5 @@ class Step:
 
 if __name__ == '__main__':
     func1()
-    #func2()
-    #task3()
-
+    func2()
+    task3()
