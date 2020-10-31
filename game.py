@@ -7,13 +7,13 @@ class Apple:
 
     def grow(self):
         currentState = self.state
-        if currentState + 1 > Apple.states.__len__():
+        if currentState + 1 >= Apple.states.__len__():
             print("Яблоко уже созрело")
         else:
             self.state = currentState + 1
 
     def is_ripe(self):
-        return self.state == Apple.states.__len__()
+        return self.state >= Apple.states.__len__()
 
 
 class AppleTree:
@@ -57,7 +57,7 @@ class Gardener:
     def harvest(self):
         for tree in self.listAppleTree:
             if tree.all_are_ripe():
-                for apple in tree:
+                for apple in tree.apples:
                     self.__private_getBasketNext().set_apple(apple)
             else:
                 print("уражай еше не созрел")
@@ -71,7 +71,7 @@ class Gardener:
         return "some rules\n" + "garden:" + self.toString()
 
     def toString(self):
-        return "name: " + self.name + "\n count of tree " + len(self.listAppleTree)
+        return "name: " + self.name + "\n count of tree " + str(len(self.listAppleTree))
 
 
 class Basket:
@@ -93,10 +93,11 @@ if __name__ == '__main__':
     a = [AppleTree(10), AppleTree(20), AppleTree(30), AppleTree(40), AppleTree(50)]
     b = [Basket(20), Basket(20), Basket(20), Basket(20), Basket(30), Basket(20)]
     g = Gardener("Sanya", a, b)
-   # g.knowledge_base()
+    print(g.knowledge_base())
     g.work()
     #g.harvest()
     g.work()
     g.work()
     g.work()
     g.harvest()
+

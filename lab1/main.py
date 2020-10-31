@@ -4,6 +4,7 @@ import sys
 import numpy as np
 import random
 
+
 def func1():
     print("Laba 1")
     print("Variant 9 :", (3.1 + 3.4) * 3.8)
@@ -137,3 +138,4 @@ if __name__ == '__main__':
     func1()
     func2()
     task3()
+
